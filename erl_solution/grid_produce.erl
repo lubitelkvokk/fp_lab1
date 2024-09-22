@@ -71,5 +71,4 @@ max4mul(Array, ProductNumber, Max) ->
     ColMax = compute_max_product(Array, Max, Length - ProductNumber, Length, 1, 1, 1, 0, ProductNumber),
     DiagRMax = compute_max_product(Array, Max, Length - ProductNumber, Length - ProductNumber, 1, 1, 1, 1, ProductNumber),
     DiagLMax = compute_max_product(Array, Max, Length - ProductNumber, Length, 1, ProductNumber, 1, -1, ProductNumber),
-    % DiagLMax.
     list_max([RowMax, ColMax, DiagRMax, DiagLMax]).
