@@ -15,4 +15,5 @@ generate_array(0, _, _, Acc) ->
     Acc;
 generate_array(N, M, Max, Acc) ->
     List = generate_random_line(M, Max),  % Генерация строки длиной M
+    fold
     generate_array(N - 1, M, Max, [List | Acc]).
