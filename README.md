@@ -29,7 +29,7 @@ Array = [
     [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ].
 ```
-
+``` erl
 list_max(List) -> list_max(List, -1).
 
 list_max([], Max) ->
@@ -95,6 +95,7 @@ max4mul(Array, ProductNumber, Max) ->
     DiagRMax = compute_max_product(Array, Max, Length - ProductNumber, Length - ProductNumber, 1, 1, 1, 1, ProductNumber),
     DiagLMax = compute_max_product(Array, Max, Length - ProductNumber, Length, 1, ProductNumber, 1, -1, ProductNumber),
     list_max([RowMax, ColMax, DiagRMax, DiagLMax]).
+```
 
 ## Task 20
 
