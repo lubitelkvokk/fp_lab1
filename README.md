@@ -1,15 +1,6 @@
 lab1
 =====
 
-An OTP application
-
-Build
------
-
-    $ rebar3 compile
-
-
-
 ## Task 11
 
 ![alt text](resources/image.png)
@@ -41,3 +32,27 @@ Array = [
 ## Task 20
 
 ![alt text](resources/image1.png)
+
+``` erl
+% Вызов функции с общим для большинства случаев нейтральным по умножению элементом (1)
+fac(X) -> fac(X, 1).
+
+% Хвостовая рекурсия, с передачей аккумулятора. Для нахождения факториала необходимо каждый раз умножать его на текущее значение.
+fac(0, Acc) -> Acc;
+fac(X, Acc) -> fac(X - 1, X * Acc).
+
+% Реализация суммы цифр числа рекурсивным методом 
+sum_digit(0) -> 0;
+sum_digit(X) -> sum_digit(X div 10) + X rem 10.
+
+% Реализация суммы цифр числа хвостовой рекурсией
+sum_digit_tailrec(X) -> sum_digit_tailrec(X, 0).
+
+sum_digit_tailrec(0, Acc) -> Acc;
+sum_digit_tailrec(X, Acc) -> sum_digit_tailrec(X div 10, Acc + X rem 10).
+
+% Реализация суммы цифр числа с использованием сверточной функции fold
+sum_digit_fold(X) ->
+    Digits = integer_to_list(X),
+    lists:foldl(fun(Digit, Acc) -> Acc + (Digit - $0) end, 0, Digits).
+```
