@@ -82,6 +82,31 @@ Terminal
 70600674
 ```
 
+### Решение на python
+``` python
+visited = [[False for _ in range(20)] for _ in range(20)]
+
+n, m = 20, 20
+
+def largest_produce():
+    mx = 0
+    for i in range(n):
+        for j in range(m):
+            if visited[i][j] != True:
+                visited[i][j] = True
+                if (j < 17):
+                    mx = max(mx, arr[i][j] * arr[i][j + 1] * arr[i][j + 2] * arr[i][j + 3])
+                if (i < 17):
+                    mx = max(mx, arr[i][j] * arr[i + 1][j] * arr[i + 2][j] * arr[i + 3][j])
+                if (i < 17 and j > 3):
+                    mx = max(mx, arr[i][j] * arr[i + 1][j - 1] * arr[i + 2][j - 2] * arr[i + 3][j - 3])
+                if (i < 17 and j < 17):
+                    mx = max(mx, arr[i][j] * arr[i + 1][j + 1] * arr[i + 2][j + 2] * arr[i + 3][j + 3])
+    return mx
+                    
+```
+
+
 ## Task 20
 
 ![alt text](resources/image1.png)
@@ -116,6 +141,28 @@ Terminal
 648
 4> factorial:fac(100).                     
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+```
+
+### Решение на python
+```
+def factorial_rec(n):
+    if (n == 0):
+         return 1
+    return n * factorial_rec(n - 1)
+
+def factorial_cycle(n:int):
+    acc = 1
+    while (n != 0):
+       acc *= n
+       n -= 1
+    return acc 
+
+def sum_of_digits(n:int):
+    acc = 0
+    while (n != 0):
+        acc += n % 10
+        n //= 10
+    return acc
 ```
 
 ## Выводы
