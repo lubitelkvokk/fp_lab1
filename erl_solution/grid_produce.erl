@@ -7,10 +7,7 @@ list_max(List) -> list_max(List, -1).
 list_max([], Max) ->
     Max;
 list_max([H | T], Max) ->
-    if
-        H > Max -> list_max(T, H);
-        H =< Max -> list_max(T, Max)
-    end.
+    list_max(T, mmax(H, Max)).
 
 mmax(X, Y) ->
     if

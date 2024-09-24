@@ -1,8 +1,5 @@
 -module(greeting).
 -export([
-    fac/1, fac/2,
-    sum_digit/1,
-    mmax/2,
     list_max/1, list_max/2,
     aboba/4,
     diagonal_r_max/1,
@@ -14,15 +11,6 @@
 -compile([debug_info]).
 
 
-
-
-fac(X) -> fac(X, 1).
-
-fac(0, Acc) -> Acc;
-fac(X, Acc) -> fac(X - 1, X * Acc).
-
-sum_digit(0) -> 0;
-sum_digit(X) -> sum_digit(X div 10) + X rem 10.
 
 % largest_product_grid_20x20(List) -> largest_product_grid_20x20(List, 20, 0, 0, -1).
 

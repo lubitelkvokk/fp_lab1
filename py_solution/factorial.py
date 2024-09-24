@@ -1,7 +1,7 @@
 def factorial_rec(n):
     if (n == 0):
          return 1
-    return n * factorial(n - 1)
+    return n * factorial_rec(n - 1)
 
 def factorial_cycle(n:int):
     acc = 1
