@@ -144,7 +144,7 @@ Terminal
 ```
 
 ### Решение на python
-```
+``` python
 def factorial_rec(n):
     if (n == 0):
          return 1
